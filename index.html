@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input Header</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h2>
+      Make Your <br />
+      <span>wish</span> List
+    </h2>
+    <div class="container">
+      <form id="dataForm">
+        <label for="SellerCode">SellerCode:</label>
+        <br />
+        <input type="text" id="SellerCode" name="SellerCode" required /> <br />
+
+        <label for="BuyerCode">BuyerCode:</label><br />
+        <input type="text" id="BuyerCode" name="BuyerCode" required /><br />
+
+        <label for="InvoiceCurrency">InvoiceCurrency:</label><br />
+        <input
+          type="text"
+          id="InvoiceCurrency"
+          name="InvoiceCurrency"
+          required
+        /><br />
+
+        <label for="Amount">Amount:</label><br />
+        <input type="number" id="Amount" name="Amount" required /><br />
+
+        <label for="InvoiceReference">InvoiceReference:</label><br />
+        <input
+          type="text"
+          id="InvoiceReference"
+          name="InvoiceReference"
+          required
+        /><br />
+
+        <label for="InvoiceDate">InvoiceDate:</label><br />
+        <input type="date" id="InvoiceDate" name="InvoiceDate" required /><br />
+
+        <label for="PaymentTerm">PaymentTerm:</label><br />
+        <input
+          type="number"
+          id="PaymentTerm"
+          name="PaymentTerm"
+          required
+        /><br />
+
+        <label for="remark">remark:</label><br />
+        <input type="text" id="remark" name="remark" required /><br />
+
+        <label for="referenceCount">Jumlah Referensi:</label><br />
+        <input
+          type="number"
+          id="referenceCount"
+          name="referenceCount"
+          required
+        /><br />
+        <div id="buttonGroup">
+          <button type="submit">Buat Daftar Invoice</button>
+          <button id="exportBtn">Ekspor ke CSV</button
+          ><button type="button" id="resetBtn">Reset</button>
+        </div>
+      </form>
+    </div>
+    <div id="InvoiceList">
+      <h3>Data yang sudah dimasukkan:</h3>
+      <ul id="dataList"></ul>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

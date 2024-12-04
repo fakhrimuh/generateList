@@ -135,7 +135,19 @@ function exportToCSV() {
   const rows = [headerCSV, ...dataInput];
 
   // Mengonversi data menjadi format CSV
-  const csvContent = rows.map((row) => row.join(",")).join("\n");
+  const csvContent = rows
+    .map((row) => {
+      return row
+        .map((cell) => {
+          // Jika cell berupa string, bungkus dengan tanda kutip agar spasi tetap dalam satu kolom
+          if (typeof cell === "string") {
+            return `"${cell}"`; // Bungkus dengan tanda kutip ganda
+          }
+          return cell; // Jika bukan string, biarkan seperti adanya
+        })
+        .join(","); // Gabungkan setiap kolom dengan koma
+    })
+    .join("\n"); // Gabungkan setiap baris dengan newline
 
   // Membuat file CSV untuk diunduh
   const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
